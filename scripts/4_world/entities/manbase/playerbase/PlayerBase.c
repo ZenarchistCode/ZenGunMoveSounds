@@ -96,7 +96,6 @@ modded class PlayerBase
 		EffectSound sound;
 		PlaySoundSet(sound, sound_set, 0, 0);
 		sound.SetSoundAutodestroy(true);
-		sound.SetSoundVolume(1);
 	}
 
 	// Called server side. Flips the net sync flag to force the client to play the given GunDropSoundType.
@@ -113,7 +112,7 @@ modded class PlayerBase
 	// Called client-side
 	bool ZenGunMove_ShouldPlaySound()
 	{
-		return m_GunMoveSoundSyncClient != m_GunMoveSoundSyncServer;
+		return m_GunMoveSoundSyncClient != m_GunMoveSoundSyncServer && m_PlayerSoundsReady;
 	}
 
 	// (Client-side) Sends an RPC to the server to play a gun move sound
