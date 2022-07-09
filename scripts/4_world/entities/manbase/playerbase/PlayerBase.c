@@ -122,7 +122,7 @@ modded class PlayerBase
 	}
 
 	// Print a debug message (client-only)
-	void ZGS_DebugMessage(string message)
+	/*void ZGS_DebugMessage(string message)
 	{
 		if (GetGame().GetPlayer())
 		{
@@ -139,5 +139,5 @@ modded class PlayerBase
 			m_MessageParam.param1 = message;
 			GetGame().RPCSingleParam(this, ERPCs.RPC_USER_ACTION_MESSAGE, m_MessageParam, true, GetIdentity());
 		}
-	}
+	}*/
 };
